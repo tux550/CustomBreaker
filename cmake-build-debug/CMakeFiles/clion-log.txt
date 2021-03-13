@@ -1,0 +1,5 @@
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\RodrigoSalad\Rodrigo\UTEC\ciclo-V2021\POO2\proyecto\semana6\CustomBreaker
+-- Found SFML 2.5.1 in C:/Users/RodrigoSalad/DevLibraries/SFML/32bit/SFML-2.5.1/lib/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/cmake-build-debug
