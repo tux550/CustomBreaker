@@ -8,6 +8,13 @@
 #include "object_t.h"
 
 namespace cb::physics {
+    // Pre-definition
+    class ball_t;
+
+    // Operator overload
+    std::ostream& operator<<(std::ostream& os, const ball_t& b);
+
+    // Implementation
     class ball_t: public object_t {
         using object_t::object_t; // Heredar constructor
         // EQUIVALENTE A (En public):
@@ -19,6 +26,7 @@ namespace cb::physics {
         //              {}
     public:
         void draw() override;
+        friend std::ostream& operator<<(std::ostream& os, const ball_t& b);
     };
 }
 

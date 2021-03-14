@@ -5,9 +5,17 @@
 #ifndef CUSTOMBREAKER_PADDLE_T_H
 #define CUSTOMBREAKER_PADDLE_T_H
 
+#include <iostream>
 #include "object_t.h"
 
 namespace cb::physics {
+    // Pre-definition
+    class paddle_t;
+
+    // Operator overload
+    std::ostream& operator<<(std::ostream& os, const paddle_t& p);
+
+    // Implementation
     class paddle_t: public object_t {
         using object_t::object_t; // Heredar constructor
         // EQUIVALENTE A (En public):
@@ -19,6 +27,7 @@ namespace cb::physics {
         //              {}
     public:
         void draw() override;
+        friend std::ostream& operator<<(std::ostream& os, const paddle_t& p);
     };
 }
 

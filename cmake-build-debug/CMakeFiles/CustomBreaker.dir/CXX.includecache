@@ -685,6 +685,8 @@ object_t.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/object_t.h
 
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/block_t.h
+iostream
+-
 object_t.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/object_t.h
 
@@ -697,10 +699,6 @@ string
 -
 
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/debug_config.h
-
-C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.cpp
-level_loader.h
-C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.h
 
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.h
 iostream
@@ -743,6 +741,8 @@ render_t.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/render_t.h
 
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/paddle_t.h
+iostream
+-
 object_t.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/object_t.h
 

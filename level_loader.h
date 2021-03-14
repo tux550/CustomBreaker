@@ -11,18 +11,28 @@
 #include "physics.h"
 
 namespace cb::level{
+    // Constants
+    const cb::dimension_t BallDim = {10.0f, 10.0f};
+    const cb::dimension_t PaddleDim = {100.0f, 10.0f};
+    const cb::length_t PaddleMargin = 20.0f;
+
+    // Names
     using block_p = cb::physics::block_t*;
     using block_ls = cb::list<block_p>;
+    using ball_p = cb::physics::ball_t*;
+    using ball_ls = cb::list<ball_p>;
+    using paddle_t = cb::physics::paddle_t;
 
     /* CHAR INTERPRETER DEFAULT FUNCTOR */
     struct Char2Block{
-    private:
+    public:
+        // Constants
         inline static const cb::dimension_t BlockDim{50.0f, 20.0f};
         inline static const cb::velocity_t  BlockVel{0.0f,0.0f};
         inline static const cb::padding_t   BlockPad{5.0f,5.0f};
         inline static const cb::graph::color_t BlockColor = cb::graph::color_t::Red;
-    public:
         inline static const cb::length_t BottomMargin = 200.0f;
+        // Functions
         block_p operator()(const cb::char_t& c, const cb::position_t& cord);
         static cb::bound_t bounds(const cb::position_t& cord);
     };
@@ -58,6 +68,11 @@ namespace cb::level{
         // Process {x,y} cords to bounds
         return interpreter.bounds({x,y});
     }
+
+    /* OBJECT GENERATOR */
+    cb::physics::paddle_t generate_paddle(const cb::bound_t &bounds);
+    void generate_balls (ball_ls& balls_list, const cb::bound_t& bounds);
+
 }
 
 #endif //CUSTOMBREAKER_LEVEL_LOADER_H

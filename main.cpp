@@ -13,29 +13,17 @@
 #include <chrono>
 using namespace std::chrono_literals;
 
-namespace cb::physics{
-    // CONSTANTS
-    // Objects
-    const cb::dimension_t DefBallDim = {10.0f, 10.0f};
-    const cb::dimension_t DefBlockDim = {50.0f, 10.0f};
-    const cb::dimension_t DefPaddleDim = {100.0f, 10.0f};
-}
-
 int main(const int argc, char** argv)
 {
     /* LOAD PAREMENTERS */
-
     // Create default parameters
     cb::args_intr::args_dict game_dict = {
             {"-lvl","simple_level.lvl"},
-            {"-difficulty", "1"},
-            {"-test","Nan"}
+            {"-difficulty", "1"}
     };
     // Load parameters from Command line
     cb::args_intr::LinkedAC{game_dict}(argc, argv);
-
-
-    /* TEST - DEBUGGIN [1] : Print de argumentos */
+    /* TEST - DEBUGGING [1] : Print de argumentos */
     #ifdef ENABLE_DEBUG_ARGS_DICT
     std::cout << "GAME PARAMETERS:" << std::endl;
     for (const auto &i : game_dict) { std::cout << i.first << "=" << i.second << std::endl; }
@@ -43,30 +31,35 @@ int main(const int argc, char** argv)
     /* ----------------------------------------- */
 
 
+
     /* CREATE OBJECTS */
-    // Load from file
-    cb::list<cb::physics::block_t*> ls_blocks;
+    // Load blocks from file
+    cb::level::block_ls ls_blocks;
     cb::bound_t game_bound = cb::level::generate_blocks(ls_blocks, game_dict["-lvl"]);
+    /* TEST - DEBUGGING [2] : Print resulting list */
+    #ifdef ENABLE_DEBUG_FILE_LOAD_BLOCK
+        std::cout << "BLOCKS CREATED:" << std::endl;
+        for (const auto &i : ls_blocks) { std::cout << *i << std::endl; }
+    #endif
+    /* ----------------------------------------- */
+    // Init paddle
+    cb::level::paddle_t paddle = cb::level::generate_paddle(game_bound);
+    /* TEST - DEBUGGING [3] : Print resulting paddle */
+    #ifdef ENABLE_DEBUG_FILE_LOAD_PADDLE
+        std::cout << "PADDLE CREATED:" << std::endl;
+        std::cout << paddle << std::endl;
+    #endif
+    /* ----------------------------------------- */
+    // Init balls
+    cb::level::ball_ls ls_balls;
+    cb::level::generate_balls(ls_balls, game_bound);
+    /* TEST - DEBUGGING [4] : Print resulting paddle */
+    #ifdef ENABLE_DEBUG_FILE_LOAD_BALL
+        std::cout << "BALL CREATED:" << std::endl;
+        for (const auto &i : ls_balls) { std::cout << *i << std::endl; }
+    #endif
 
 
-    // Init lists & paddle
-
-    cb::list<cb::physics::ball_t*> ls_balls;
-    cb::physics::paddle_t paddle({500.0f, 500.0f}, cb::physics::DefPaddleDim, {0.0f,0.0f}, cb::graph::color_t::Black);
-    /*
-    ls_blocks.push_back(new cb::physics::block_t(
-                                    {100.0f,100.0f}, cb::physics::DefBlockDim, {0.0f,0.0f}, cb::graph::color_t::Red
-                                 )
-                       );
-    ls_blocks.push_back(new cb::physics::block_t(
-            {200.0f,200.0f}, cb::physics::DefBlockDim, {0.0f,0.0f}, cb::graph::color_t::Red
-                        )
-    );
-    */
-    ls_balls.push_back(new cb::physics::ball_t(
-            {200.0f,600.0f}, cb::physics::DefBallDim, {0.0f,-5.0f}, cb::graph::color_t::Green
-                        )
-    );
 
     /* CREATE WINDOWS */
     auto render = cb::graph::render_t::get_instance(
@@ -87,18 +80,6 @@ int main(const int argc, char** argv)
         // Evaluar Collisiones
         // Actualizar pos y Dibujar
         p_render.clear(cb::graph::color_t::Blue);
-        /*
-        for (const auto& i : ls_blocks) {
-            i->move();
-            i->draw();
-        }
-        for (const auto& i : ls_balls) {
-            i->move();
-            i->draw();
-        }
-        paddle.move();
-        paddle.draw();
-        */
         cb::utility::bulk_move_draw(ls_balls, ls_blocks, paddle);
 
         // Display y sleep
