@@ -4,7 +4,7 @@ project(CustomBreaker)
 # Archivos del Projecto
 set(PROJECT_SOURCE
         main.cpp
-        args_interpreter.cpp args_interpreter.h common_types.h platform_types.h render_t.cpp render_t.h debug_config.h object_t.cpp object_t.h block_t.cpp block_t.h ball_t.cpp ball_t.h physics.h paddle_t.cpp paddle_t.h utility.cpp utility.h)
+        args_interpreter.cpp args_interpreter.h common_types.h platform_types.h render_t.cpp render_t.h debug_config.h object_t.cpp object_t.h block_t.cpp block_t.h ball_t.cpp ball_t.h physics.h paddle_t.cpp paddle_t.h utility.cpp utility.h level_loader.cpp level_loader.h)
 
 # C++ Standard se sugiere 11 o 14
 set(CMAKE_CXX_STANDARD 17)

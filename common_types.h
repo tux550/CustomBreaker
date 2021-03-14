@@ -13,6 +13,7 @@
 namespace cb{
     // Basic
     using string_t = std::string;
+    using char_t = char;
     using size_t = std::size_t;
     using length_t = float;
     using speed_t = float;
@@ -34,6 +35,10 @@ namespace cb{
     struct bound_t{
         limit_t lim_x;
         limit_t lim_y;
+    };
+    struct padding_t{
+        length_t x;
+        length_t y;
     };
 
     // Containers

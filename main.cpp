@@ -6,11 +6,20 @@
 #include "args_interpreter.h"
 #include "render_t.h"
 #include "physics.h"
+#include "level_loader.h"
 #include "utility.h"
 
 #include <thread>
 #include <chrono>
 using namespace std::chrono_literals;
+
+namespace cb::physics{
+    // CONSTANTS
+    // Objects
+    const cb::dimension_t DefBallDim = {10.0f, 10.0f};
+    const cb::dimension_t DefBlockDim = {50.0f, 10.0f};
+    const cb::dimension_t DefPaddleDim = {100.0f, 10.0f};
+}
 
 int main(const int argc, char** argv)
 {
@@ -35,11 +44,16 @@ int main(const int argc, char** argv)
 
 
     /* CREATE OBJECTS */
-    // Init lists & paddle
+    // Load from file
     cb::list<cb::physics::block_t*> ls_blocks;
+    cb::bound_t game_bound = cb::level::generate_blocks(ls_blocks, game_dict["-lvl"]);
+
+
+    // Init lists & paddle
+
     cb::list<cb::physics::ball_t*> ls_balls;
     cb::physics::paddle_t paddle({500.0f, 500.0f}, cb::physics::DefPaddleDim, {0.0f,0.0f}, cb::graph::color_t::Black);
-
+    /*
     ls_blocks.push_back(new cb::physics::block_t(
                                     {100.0f,100.0f}, cb::physics::DefBlockDim, {0.0f,0.0f}, cb::graph::color_t::Red
                                  )
@@ -48,15 +62,16 @@ int main(const int argc, char** argv)
             {200.0f,200.0f}, cb::physics::DefBlockDim, {0.0f,0.0f}, cb::graph::color_t::Red
                         )
     );
-
+    */
     ls_balls.push_back(new cb::physics::ball_t(
-            {500.0f,600.0f}, cb::physics::DefBallDim, {0.0f,-5.0f}, cb::graph::color_t::Green
+            {200.0f,600.0f}, cb::physics::DefBallDim, {0.0f,-5.0f}, cb::graph::color_t::Green
                         )
     );
 
     /* CREATE WINDOWS */
     auto render = cb::graph::render_t::get_instance(
-            {1200,800},
+            game_bound,
+            //{1200,800},
             "CustomBreaker"
             );
     auto& p_render = render->get_platform_render();

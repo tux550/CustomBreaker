@@ -698,6 +698,20 @@ string
 
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/debug_config.h
 
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.cpp
+level_loader.h
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.h
+
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.h
+iostream
+-
+fstream
+-
+common_types.h
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/common_types.h
+physics.h
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/physics.h
+
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/main.cpp
 iostream
 -
@@ -713,6 +727,8 @@ render_t.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/render_t.h
 physics.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/physics.h
+level_loader.h
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.h
 utility.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/utility.h
 thread
@@ -747,10 +763,6 @@ C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreak
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/render_t.h
 platform_types.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/platform_types.h
-
-C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/utility.cpp
-utility.h
-C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/utility.h
 
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/utility.h
 
