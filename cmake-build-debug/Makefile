@@ -208,6 +208,33 @@ block_t.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CustomBreaker.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CustomBreaker.dir\block_t.cpp.s
 .PHONY : block_t.cpp.s
 
+direction_input.obj: direction_input.cpp.obj
+
+.PHONY : direction_input.obj
+
+# target to build an object file
+direction_input.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CustomBreaker.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CustomBreaker.dir\direction_input.cpp.obj
+.PHONY : direction_input.cpp.obj
+
+direction_input.i: direction_input.cpp.i
+
+.PHONY : direction_input.i
+
+# target to preprocess a source file
+direction_input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CustomBreaker.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CustomBreaker.dir\direction_input.cpp.i
+.PHONY : direction_input.cpp.i
+
+direction_input.s: direction_input.cpp.s
+
+.PHONY : direction_input.s
+
+# target to generate assembly for a file
+direction_input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CustomBreaker.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CustomBreaker.dir\direction_input.cpp.s
+.PHONY : direction_input.cpp.s
+
 level_loader.obj: level_loader.cpp.obj
 
 .PHONY : level_loader.obj
@@ -388,6 +415,9 @@ help:
 	@echo ... block_t.obj
 	@echo ... block_t.i
 	@echo ... block_t.s
+	@echo ... direction_input.obj
+	@echo ... direction_input.i
+	@echo ... direction_input.s
 	@echo ... level_loader.obj
 	@echo ... level_loader.i
 	@echo ... level_loader.s

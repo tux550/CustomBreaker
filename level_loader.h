@@ -12,9 +12,31 @@
 
 namespace cb::level{
     // Constants
-    const cb::dimension_t BallDim = {10.0f, 10.0f};
-    const cb::dimension_t PaddleDim = {100.0f, 10.0f};
-    const cb::length_t PaddleMargin = 20.0f;
+    struct BallConfig{
+        // General
+        inline static cb::dimension_t BallDim = {10.0f, 10.0f};
+        inline static cb::speed_t BallMaxSpeed = 0.5f;
+        inline static cb::graph::color_t BallColor = cb::graph::color_t::Green;
+    };
+
+    struct PaddleConfig{
+        // General
+        inline static cb::dimension_t PaddleDim = {100.0f, 10.0f};
+        inline static cb::length_t PaddleMaxSpeed = 0.2f;
+        inline static cb::graph::color_t PaddleColor = cb::graph::color_t::White;
+        // For positioning
+        inline static cb::length_t PaddleMargin = 20.0f;
+    };
+
+    struct BlockConfig{
+        // General
+        inline static cb::dimension_t BlockDim{50.0f, 20.0f};
+        inline static cb::velocity_t  BlockVel{0.0f,0.0f};
+        inline static cb::graph::color_t BlockColor = cb::graph::color_t::Red;
+        // For positioning
+        inline static cb::padding_t   BlockPad{5.0f,5.0f};
+        inline static cb::length_t BottomMargin = 200.0f;
+    };
 
     // Names
     using block_p = cb::physics::block_t*;
@@ -26,12 +48,6 @@ namespace cb::level{
     /* CHAR INTERPRETER DEFAULT FUNCTOR */
     struct Char2Block{
     public:
-        // Constants
-        inline static const cb::dimension_t BlockDim{50.0f, 20.0f};
-        inline static const cb::velocity_t  BlockVel{0.0f,0.0f};
-        inline static const cb::padding_t   BlockPad{5.0f,5.0f};
-        inline static const cb::graph::color_t BlockColor = cb::graph::color_t::Red;
-        inline static const cb::length_t BottomMargin = 200.0f;
         // Functions
         block_p operator()(const cb::char_t& c, const cb::position_t& cord);
         static cb::bound_t bounds(const cb::position_t& cord);

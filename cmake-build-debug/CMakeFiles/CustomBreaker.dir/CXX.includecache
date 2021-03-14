@@ -700,6 +700,14 @@ string
 
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/debug_config.h
 
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/direction_input.h
+SFML/Graphics.hpp
+-
+common_types.h
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/common_types.h
+platform_types.h
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/platform_types.h
+
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.h
 iostream
 -
@@ -727,6 +735,8 @@ physics.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/physics.h
 level_loader.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.h
+direction_input.h
+C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/direction_input.h
 utility.h
 C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/utility.h
 thread

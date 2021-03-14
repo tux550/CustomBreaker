@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CustomBreaker.dir/args_interpreter.cpp.obj"
   "CMakeFiles/CustomBreaker.dir/ball_t.cpp.obj"
   "CMakeFiles/CustomBreaker.dir/block_t.cpp.obj"
+  "CMakeFiles/CustomBreaker.dir/direction_input.cpp.obj"
   "CMakeFiles/CustomBreaker.dir/level_loader.cpp.obj"
   "CMakeFiles/CustomBreaker.dir/main.cpp.obj"
   "CMakeFiles/CustomBreaker.dir/object_t.cpp.obj"

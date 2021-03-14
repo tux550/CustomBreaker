@@ -110,6 +110,12 @@
 		<Unit filename="C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/debug_config.h">
 			<Option target="CustomBreaker"/>
 		</Unit>
+		<Unit filename="C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/direction_input.cpp">
+			<Option target="CustomBreaker"/>
+		</Unit>
+		<Unit filename="C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/direction_input.h">
+			<Option target="CustomBreaker"/>
+		</Unit>
 		<Unit filename="C:/Users/RodrigoSalad/Rodrigo/UTEC/ciclo-V2021/POO2/proyecto/semana6/CustomBreaker/level_loader.cpp">
 			<Option target="CustomBreaker"/>
 		</Unit>

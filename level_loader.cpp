@@ -11,10 +11,10 @@ namespace cb::level{
             // Caso bloque
             case 'B':
                 pos = {
-                        (cord.x * (BlockDim.width+2*BlockPad.x) + BlockPad.x),
-                        (cord.y * (BlockDim.height+2*BlockPad.y) + BlockPad.y)
+                        (cord.x * (cb::level::BlockConfig::BlockDim.width+2*cb::level::BlockConfig::BlockPad.x) + cb::level::BlockConfig::BlockPad.x),
+                        (cord.y * (cb::level::BlockConfig::BlockDim.height+2*cb::level::BlockConfig::BlockPad.y) + cb::level::BlockConfig::BlockPad.y)
                 };
-                return new cb::physics::block_t (pos, BlockDim, BlockVel, BlockColor);
+                return new cb::physics::block_t (pos, cb::level::BlockConfig::BlockDim, cb::level::BlockConfig::BlockVel, cb::level::BlockConfig::BlockColor);
             // Caso vacio
             case 'E':
                 return nullptr;
@@ -29,8 +29,8 @@ namespace cb::level{
 
     cb::bound_t Char2Block::bounds(const position_t &cord) {
         cb::bound_t b {
-                static_cast<limit_t>(( (cord.x) * (BlockDim.width+2*BlockPad.x) )),
-                static_cast<limit_t>(( (cord.y) * (BlockDim.height+2*BlockPad.y) + BottomMargin))
+                static_cast<limit_t>(( (cord.x) * (cb::level::BlockConfig::BlockDim.width+2*cb::level::BlockConfig::BlockPad.x) )),
+                static_cast<limit_t>(( (cord.y) * (cb::level::BlockConfig::BlockDim.height+2*cb::level::BlockConfig::BlockPad.y) + cb::level::BlockConfig::BottomMargin))
         };
         return b;
     }
@@ -39,24 +39,25 @@ namespace cb::level{
     cb::physics::paddle_t generate_paddle(const cb::bound_t &bounds) {
         return {
                     {
-                        ( static_cast<length_t>(bounds.lim_x/2) - static_cast<length_t>(PaddleDim.width/2) ),
-                        (bounds.lim_y-cb::level::PaddleMargin)
+                        ( static_cast<length_t>(bounds.lim_x/2) - static_cast<length_t>(cb::level::PaddleConfig::PaddleDim.width/2) ),
+                        (bounds.lim_y-cb::level::PaddleConfig::PaddleMargin)
                     },
-                    cb::level::PaddleDim,
+                    cb::level::PaddleConfig::PaddleDim,
                     {0.0f,0.0f},
-                    cb::graph::color_t::White
+                    cb::level::PaddleConfig::PaddleColor,
+                    cb::level::PaddleConfig::PaddleMaxSpeed
                 };
     }
     void generate_balls (ball_ls& balls_list, const cb::bound_t& bounds){
         balls_list.push_back(
         new cb::physics::ball_t(
                         {
-                            ( static_cast<cb::length_t>(bounds.lim_x/2) - static_cast<length_t>(BallDim.width/2) ),
-                            (bounds.lim_y-cb::level::PaddleMargin)-50
+                            ( static_cast<cb::length_t>(bounds.lim_x/2) - static_cast<length_t>(cb::level::BallConfig::BallDim.width/2) ),
+                            (bounds.lim_y-cb::level::PaddleConfig::PaddleMargin)-50
                         },
-                        cb::level::BallDim,
-                        {0.0f,0.5f},
-                        cb::graph::color_t::Green
+                        cb::level::BallConfig::BallDim,
+                        {0.0f,cb::level::BallConfig::BallMaxSpeed},
+                        cb::level::BallConfig::BallColor
                     )
         );
     }
