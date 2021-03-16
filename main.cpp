@@ -23,7 +23,8 @@ int main(const int argc, char** argv)
             {"-difficulty", "1"},
     };
     // Load parameters from Command line
-    cb::args_intr::LinkedAC{game_dict}(argc, argv);
+    {cb::args_intr::LinkedAC{game_dict}(argc, argv);}
+
     // Tests/Debug
     #ifdef ENABLE_DEBUG_ARGS_DICT
     /* TEST - DEBUGGING [1] : Print de argumentos */
